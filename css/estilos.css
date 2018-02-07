@@ -1,0 +1,274 @@
+/* Julia Carmona Felipe, 31/01/18. */
+/* estilos generales */
+* {margin: 0; padding: 0; box-sizing: border-box}
+
+body {font-family: 'Gloria Hallelujah',sans-serif ,cursive;
+      font-size: 20px; color: rgb(15, 82, 23);
+      background-color: rgba(245, 245, 220, 0.767);
+        /*background-image: url('../img/puente.jpg'); background-position: center;
+        background-size: cover;*/}
+/* body p {background-color: rgba(245, 245, 220, 0.767);} */
+      /* para quitar el color por defecto (el subrayado) que tienen los 
+      enlaces de inicio, contacto,... */
+a {text-decoration: none; color: darkolivegreen;}
+a:hover {color: darkgreen;}
+a.activo {color: #64d116;}
+.pag2 a {text-decoration: none; color: darkgreen;}
+.pag2 a:hover {color: #364E27;}
+.pag2 a.activo {color: #64d116;}
+/*max-width: 100%, para que la imagen en este caso tenga el 100% de su padre, o 
+contenedor en este caso el div.col1  */
+img {max-width: 100%;/*min-height: 100%*/}
+/*line-height: 1.8em, para poner el interlineado, se pone en una medida relativa.  */
+p {padding: 10px; line-height: 1.8em}
+.boton {margin: 40px;color: darkgreen; background-color:#b7eb93;
+        font-size: 22px; padding: 12px;border-radius: 15px; border: 3px solid darkgreen;}
+
+.boton:hover {background-color:darkgreen;color:#b7eb93 ; cursor: pointer; }
+
+.boton_revista {margin: 10px 20px;color: darkgreen; background-color:#b7eb93;
+         font-size: 22px; padding: 12px;border-radius: 15px;border: 3px solid darkgreen;
+        background: -webkit-linear-gradient(top, lightgreen, rgb(2, 143, 2))}
+
+.boton_revista:hover {background-color:darkgreen;color:#b7eb93 ; cursor: pointer;}
+
+.input_revista {color: darkgreen; background-color:#b7eb93; padding: 15px; 
+                border: 3px solid darkgreen; border-radius: 15px; font-size: 22px;
+                margin: 10px 20px;}
+
+.input_revista:hover {background-color:darkgreen;color:#b7eb93 ; cursor: pointer;}
+/* para quitar el recuadrito azul cuando seleccionas en el input de correo o de enviar, 
+hacemos: .boton_revista:focus, .input_revista:focus {outline: none;}*/
+.boton_revista:focus, .input_revista:focus {outline: none;}
+/* para cambiar el color de los botones (acceder a), hacemos más clases para añadirselas
+a las de .boton. 
+(en mi caso como le he puesto el mismo color a los 3 botones podría hacerlo con una simple
+clase, sin necesidad de hacer 3.*/
+/* .naranja {background-color:#6dba36;}
+.azul {background-color:#6dba36}
+.rojo {background-color:#6dba36}  */
+.verde {background-color: #b7eb93;}
+
+/* para que cuando pasemos el puntero por encima de los botones (acceder a), se ponga
+más clarito (en mi caso). */
+.verde:hover {background-color: darkgreen}
+/* .naranja:hover {background-color:#b7eb93;}
+.azul:hover {background-color:#b7eb93;}
+.rojo:hover {background-color:#b7eb93;}  */
+
+.separador { border:2px dotted darkgreen; display: none; width: 60%;}
+/* para poner una animacion de forma intermitente,
+  al 0% no se ve, al 50% si, y al 100%, no. */
+@keyframes intermitente {0% {opacity:0.4;} 50% {opacity: 1;} 100% {opacity: 0.4;}}
+    /* lo primero que vamos a hacer es la barra de navegacion de arriba.*/
+
+    /* cabecera con logo y barra de navegación */ 
+
+/* utilizamos el height para que la cabecera aumente y ademas el align-items:center
+    para que el contenido se coloque en el medio de la altura del header*/
+
+header {display: flex; justify-content: space-between;
+        height: 100px; align-items: center; padding: 20px;position: absolute;
+        width: 100%; top: 0;}
+        /* top=0, lo ponemos para que se mantenga el header pegado a la parte superior */
+        /* le ponemos la posicion absolute, en este caso del padre que es el body,
+        para que nos aparezca la imagen que hemos incorporado se vea por completo
+        en la pagina. */
+.pag2 {box-shadow: 0 4px 12px darkolivegreen; background: darkolivegreen;
+        position: initial;}
+.pag5 {box-shadow: 0 4px 12px darkolivegreen; background: darkolivegreen;
+position: initial;}
+
+header .burger {display: none;color:#6dba36; font-size: 36px;}
+.pag2 .burger {color: #6dba36;}
+/* vamos a hacer que la ul, deje de ser una lista. eso lo hacemos con
+list-style: none. queremos que los enlaces esté en horizontal, y no en columna */
+header nav ul {list-style: none; display: flex;}
+/* para que se separen los elementos que están en la lista. */
+header nav ul li {padding: 20px;}
+/* para cambiar el color azul que tienen por defecto los enlaces */
+header nav ul li a {color: rgb(177, 238, 209);}
+
+.pag2  nav ul li a {color: rgb(177, 238, 209) ;}
+.pag2 nav ul li a.activo {color: #6dba36;}
+.pag2  nav ul li a:hover {color: rgb(13, 194, 52) ;}
+
+/* (una clase y 4 elementos) 34*/
+/* seccion hero */
+
+/* queremos que tenga la altura total del dispositivo por lo que le ponemos 100vh;
+ */
+.hero {height: 100vh;background-image: url('../img/proteccionambiental.jpg'); 
+        background-size: cover;background-position: center; 
+/* para ponerlo fijo utilizamos background-attachment: fixed */
+        background-attachment:fixed; display: flex; flex-direction: column;
+        /* para que se vayan para abajo, justify-content: flex-end */
+        justify-content: flex-end; align-items: center;}
+.hero h1 {color: rgb(193, 238, 193); font-size: 50px;}
+.hero h2 {color:rgb(193, 238, 193); margin-bottom: 80px;}
+/* para cambiar el color de "a"(el enlace del icono) dentro del ".hero" */
+/* tras poner el@keyframen, nos venismos a .hero a, y le ponemos 
+animation-name, y le ponemos el nombre que hemos puesto arriba "intermitente",
+le añadimos la duracion, con animation-duration: 1s, para que dure un segundo
+y por ultimo le añadimos animation-iteration-count, para poner cuantas veces
+queremos que se repita, en nuestro caso de forma infinita */
+.hero a {color: darkgreen; font-size: 40px; margin-bottom: 15px;
+        animation-name: intermitente; animation-duration: 2s; 
+        animation-iteration-count: infinite;}
+
+        /* layout (maquetacion) */
+ /* le añadimos display:flex para que las col sean cajas.
+  añadimos flex-wrap:wrap, para que cuando las cajas no quepan en la misma
+  direccion, salten. flex-basis, sirve para poner un ancho de referncia */
+/*flex-grow: 1; flex-grow: 2; ambos tienen 300px como referencia, y cuando
+ tengas espacio libre, el 1 crecera 1 unidad, y el que tiene un 2 crecerá el doble,
+ si ponemos un flex-grow: 3 y mantenemos el flex-grow: 1, el ancho del 3, ocupará
+ el 3/4 de la pantalla y el 1 1/4parte. */
+.fila {padding: 40px;display: flex; flex-wrap: wrap;}
+.ultima {margin-bottom: 40px;}
+
+.col1 {/*border: solid 2px lightgreen;*/ flex-basis: 300px; flex-grow: 1;
+        padding: 10px; }
+.col2 {/*border: solid 2px lightgreen*/ flex-basis: 300px; flex-grow: 2;
+        padding: 10px;}
+.col3 {/*border: solid 2px lightgreen*/ flex-basis: 300px; flex-grow: 3;
+        padding: 10px; }
+/* le añadimos al input de correo, la clase col100, y le quitamos la clase col1,
+y así nos hace el salto de linea y cae el input de correo justo debajo de la referencia
+escrita. para que salte a la siguiente linea porque el contenedor está  con la propiedad wrap. */
+.col100 {padding: 10px; width: 100%;display: flex; justify-content: center;
+        align-items: center;}
+/* el valor por defecto de align-items es streched, e iguala al que tiene al lado, y como le teniamos
+puesto un margin de 40px, al poner align-items: center, conseguimos que la columna no se iguale a la otra
+que tiene al lado. */
+
+/* para cuando la imagen que ponemos en la columna es más pequeña que el
+contenido de la columna colindante. y le añadimos a la columna que contiene
+la imagen, la clase centrado (se escribe junto a la clase col1) */
+.centrado {display: flex;justify-content: center; align-items: center;}
+/* para poner el "pie de la imagen del bosque" nos creamos una nueva clase
+para añadirsela a este col1. */
+/* align-items: flex-end; para colocar en el eje vertical el mensaje */
+.piederecho {display: flex; align-items: flex-end;}
+/* nos vamos a hacer un .columna para que los enlaces para acceder a los distintos 
+iconos pongan acceder a, debajo haciendo una columna. y le cambiamos la clase centrado
+de los iconos por la nueva que acabamos de hacer (.columna). */
+.columna {display: flex; flex-direction: column; align-items: center;
+         justify-content: center;}
+/* vamos a ahcer la imagen de fondo del eslogan (seccion con imagen de fondo),
+como la imagen se nos ve excesivamente grande con el poco contenido que tiene
+y le añadimos un background-position: center;y background-size: cover;*/
+.fondo {background-image: url('../img/hojas heladas (eslogan).jpg'); 
+        background-position: center; background-size: cover; padding: 60px 40px;}
+.eslogan {font-size: 40px;text-align: center;color: #376b11; 
+          background-color: rgba(245, 245, 220, 0.70)}
+/* formulario de la revista mensual, vamos a darle estilos al input del correo, ya que
+viene con las cosas que ponen por defecto. le añadimos una clase "revista" al parrafo
+para añadirle estilos al mensaje que está encima del input correo. por ultimo, nos queda
+estilizar el boton. */
+
+input {color: beige; font-size:20px; padding: 15px; border: 4px solid darkgreen;
+        border-radius: 15px; }
+.revista {font-size: 30px; color: darkgreen;border: 3px solid darkgreen;}
+/* poner un icono dentro del boton, si quiero un icono que está en una fuente web es más
+facil que poner nosotros uno propio. ponemos en el html: <button class="boton_revista">
+ Suscríbete &nbsp; <i class="fas fa-share-square"></i> </button>. el elemento i, es 
+ lo que hemos copiado del icono que hemos elegido en fontawesome. le hemos añadido la clase
+ que tenia anteriormente puesto el otro input de boton.
+ */
+
+ /* FOOTER */
+
+footer {background: 
+        radial-gradient(circle at 50% 59%, rgb(233, 220, 169) 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 50px 0,
+        radial-gradient(circle at 50% 41%, #364E27 3%, rgb(233, 220, 169)  4%, rgb(233, 220, 169)  11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 50px 0,
+        radial-gradient(circle at 50% 59%, rgb(233, 220, 169)  3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 0 50px,
+        radial-gradient(circle at 50% 41%, #364E27 3%, rgb(233, 220, 169)  4%, rgb(233, 220, 169)  11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 0 50px,
+        radial-gradient(circle at 100% 50%, rgb(233, 220, 169)  16%, rgba(210,202,171,0) 17%),
+        radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%),
+        radial-gradient(circle at 100% 50%, rgb(233, 220, 169)  16%, rgba(210,202,171,0) 17%) 50px 50px,
+        radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%) 50px 50px;
+        background-color:#63773F;
+        background-size:100px 100px;display: flex; flex-wrap: wrap; font-size: 18px;
+        position: relative;} 
+/* para que el boton esté centrado sin encesidad de porcentaje o pixeles (que no suelen quedar perfecto
+puesto que cuando se cierre o aumente la ventana cambian las medidas), para que se `ponga en medio
+ponemos la propiedad transform: translateX(50%), y se mantiene en medio. (transform... se puede utilizar
+para cualquier elemento que queramos tener centrado. */
+/* no nos podemos olvidar de que para tener la posicion absolute, el padre tambien tiene que estar posicionado
+, position: relative. en nuestro ejemplo el boton es el hijo y el padre es el footer, por lo que la clase
+que le tenemos atribuida al boton (.top), tiene que tener una posicion absoluta conr especto a su padre
+que es el footer. */
+.top { font-size: 50px; position: absolute; top: -60px; right: 50%;
+        transform: translateX(50%); height: 60px; width: 60px;
+        background-color: #6dba36; border-radius: 35px; display: flex; justify-content: center;
+        align-items: center;padding: 10px;}
+
+footer a {color:rgb(154, 246, 154); }
+
+.izquierda { border-radius: 15px; text-align: center;padding: 20px;}
+.izquierda p {padding: 5px;color:  #b7eb93}
+
+.centro { border-radius: 15px;padding: 20px;
+         display: flex;flex-direction: column;
+        text-align: center; justify-content: space-around;}
+.centro a:hover {color: rgb(7, 180, 7)}
+
+.derecha {border-radius: 15px;display: flex;flex-direction: column;
+          justify-content: space-between; align-items:center;padding: 20px;}
+.derecha a { color: #b7eb93;font-size: 40px;margin: 5px;}
+.derecha a:hover {color: #6dba36;}
+
+.legales a {font-size: 16px;}
+
+.minifooter p {font-size:14px; padding: 5px;color: #b7eb93 }
+
+/* para crear el menu estilo hamburguesa para que no se apelmacen los nombres de los enlaces del
+menu de navegacion. */
+
+
+
+/* estilos para la pagina5, (contactos) */
+
+.direccion {line-height: 2em}
+h1 {font-size: 34px;padding: 10px;}
+h2 {font-size: 24px;padding: 10px;}
+ul {padding-left: 60px;}
+li {padding: 10px; line-height: 1.4em;}
+
+/* media queries, 
+todo lo que ponga entre los corchetes se aplicará cuando el ancho sea menor a 1000px) */
+/* ponemos que la barra de navegacion no aparezca cuando el ancho maximo sea inferior a 1000px; */
+
+@media (max-width:1000px) {nav {display: none;}
+header .burger {display: initial;}
+.hero h1 { font-size: 36px; text-align: center;}
+.hero h2 {font-size: 26px; text-align: center;}
+
+}
+@media (max-width: 920px) {
+
+.izquierda, .centro, .derecha {flex-basis: 200px; /*align-items: flex-end; padding: 20px;*/}
+}
+
+@media (max-width: 740px) {
+.col1 {flex-basis: initial;}
+.columna img {height: 60px;}
+.columna .boton {margin: 20px;font-size: 18px; padding: 8px; text-align: center;
+                border: 3px solid darkgreen;font-size: 16px}
+.revista {font-size: 24px; text-align: center;}
+.boton_revista {font-size: 18px; padding: 8px;}
+.input_revista { padding: 12px;  font-size: 18px;}
+
+}
+
+@media (max-width: 640px) {
+.fila {flex-direction: column; align-items: center}
+.separador {display: initial}
+.eslogan {font-size: 26px;}
+.col100 {flex-direction: column; align-items: center;}
+}
+
+@media (max-width: 422px) {body {font-size: 18px;}
+.fila {padding: 20px 10px;}
+}
