@@ -18,7 +18,11 @@ del header. y vamos a hacer que el logo aparezca en el lado derecho y el menu ha
 <p class="burger"> <!--&#9776; entidad html-->
         <i class="fas fa-bars"></i>
 </p>
-        <a href="#">
+<!-- para configurar una ruta a un archivo, cambiamos la almohadilla #, que teniamos en el href, por una 
+barra/. esto lo hacemos en todas los archivos html. <a href="/"> (de la linea 24 de index.html;
+    <li> <a href="/" class="activo">Inicio </a> </li>, en la linea 36 de index. html)
+/ esto significa que nos rediriga a la carpeta raiz, -->
+        <a href="/">
             <img src="./img/hojas.svg" alt="logo">
         </a>
     <!-- elemento nav, para la barra de navegación -->
@@ -29,7 +33,7 @@ del header. y vamos a hacer que el logo aparezca en el lado derecho y el menu ha
         ponemos "a" para que sean enlaces.     -->
         <nav>
             <ul>
-                <li> <a href="index.html" class="activo">Inicio </a> </li>
+                <li> <a href="/" class="activo">Inicio </a> </li>
                 <li><a href="cercadenosotros.html">cerca de nosotros</a> </li>
                 <li><a href="fauna.html">fauna</a> </li>
                 <li><a href="colaboraconelmedioambiente.html">colabora con el medio ambiente</a> </li>

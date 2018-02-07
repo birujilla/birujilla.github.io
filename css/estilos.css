@@ -105,7 +105,7 @@ header nav ul li a {color: rgb(177, 238, 209);}
         /* para que se vayan para abajo, justify-content: flex-end */
         justify-content: flex-end; align-items: center;}
 .hero h1 {color: rgb(193, 238, 193); font-size: 50px;}
-.hero h2 {color:rgb(193, 238, 193); margin-bottom: 80px;}
+.hero h2 {color:darkgreen; margin-bottom: 80px;}
 /* para cambiar el color de "a"(el enlace del icono) dentro del ".hero" */
 /* tras poner el@keyframen, nos venismos a .hero a, y le ponemos 
 animation-name, y le ponemos el nombre que hemos puesto arriba "intermitente",
