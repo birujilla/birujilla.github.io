@@ -101,7 +101,10 @@ header nav ul li a {color: rgb(177, 238, 209);}
 .hero {height: 100vh;background-image: url('../img/proteccionambiental.jpg'); 
         background-size: cover;background-position: center; 
 /* para ponerlo fijo utilizamos background-attachment: fixed */
-        background-attachment:fixed; display: flex; flex-direction: column;
+
+       /* background-attachment:fixed; lo comento para evitar problemas 
+       en pantallas de retina (al hacer esto deja de funcionarme el paralax (que se desplace
+       la imagen que tengo de fondo en el inicio)*/ display: flex; flex-direction: column;
         /* para que se vayan para abajo, justify-content: flex-end */
         justify-content: flex-end; align-items: center;}
 .hero h1 {color: rgb(193, 238, 193); font-size: 50px;}
@@ -239,6 +242,12 @@ li {padding: 10px; line-height: 1.4em;}
 /* media queries, 
 todo lo que ponga entre los corchetes se aplicará cuando el ancho sea menor a 1000px) */
 /* ponemos que la barra de navegacion no aparezca cuando el ancho maximo sea inferior a 1000px; */
+
+@media (min-width: 1440px) {
+        .hero {background-attachment: fixed;}
+}
+/* nos sirve apra conservar el efecto paralax de la imagen de inicio de la pagina principal. 
+solo funcionará en dispositivos de más de 1440px; */
 
 @media (max-width:1000px) {nav {display: none;}
 header .burger {display: initial;}
